@@ -20,7 +20,7 @@ def inequality(X, Y, n):
     X_Y = X[0] + Y[0], X[1] + Y[1]
     left = polygon_norm(X_Y, n)
     right = polygon_norm(X, n) + polygon_norm(Y, n)
-    if not left < right:
+    if not left <= right:
         approx_equal = abs(left - right)
         if approx_equal > error_range:
             return False
