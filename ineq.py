@@ -4,6 +4,7 @@ from random import randint, choice
 error_range = 1 / float(pow(10, 10))
 
 def rotate(x1, y1, n):
+    '''Rotates de point (x1, y1) to the first polygon quadrant'''
     quadrant = (2 * pi) / float(n)
     k = floor(atan2(y1, x1) / quadrant)
     phi = k * quadrant
@@ -12,6 +13,7 @@ def rotate(x1, y1, n):
     return x, y
 
 def polygon_norm(X, n):
+    '''(X, n) -> Norm of X=(x, y): n=number of sides'''
     x , y = rotate(X[0], X[1], n)
     return x + y * tan(pi / float(n))
 
